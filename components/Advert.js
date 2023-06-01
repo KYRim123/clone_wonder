@@ -4,6 +4,7 @@ import Center from './Center'
 import styled from 'styled-components'
 import { FlexStyled } from './Header'
 import Button from './Button'
+import ImageComponent from './Image'
 
 const BgAdvert = styled.div`
   background-color: var(--bg-advert);
@@ -21,14 +22,19 @@ const AdvertButton = styled.div`
     margin-right: 1rem;
   }
 `
+const WrapperImage = styled.div`
+  margin-top: 4rem;
+`
 export default function Advert() {
   return (
     <Center>
       <BgAdvert>
         <FlexStyled style={{ padding: '0 3rem' }} align="center">
-          <div>
-            <img src="https://framerusercontent.com/images/SGFrYFCQP0MZFlQVnD0cTEQZE.png" alt="" />
-          </div>
+          <WrapperImage>
+            <ImageComponent styles={{ width: '50rem', height: '50rem' }} alt={'imgAdv'}>
+              {'https://framerusercontent.com/images/SGFrYFCQP0MZFlQVnD0cTEQZE.png'}
+            </ImageComponent>
+          </WrapperImage>
           <AdvertContainer>
             <h2>All components are ready to use</h2>
             <AdvertButton>

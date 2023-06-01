@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 import WrapperIcon from './icons/WrapperIcon'
 import Center from './Center'
-import { Flex, FlexStyled } from './Header'
+import { FlexStyled } from './Header'
+import ImageComponent from './Image'
 
 const BrandStyled = styled.div`
   margin-top: 16.6rem;
@@ -12,26 +13,42 @@ const Title = styled.h4`
   font-size: 2.4rem;
   font-weight: 600;
 `
+const marquee = keyframes`
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+`
 const ListStyled = styled.ul`
-  position: relative;
-  ${Flex};
-  padding: 4rem 0 3rem;
-  justify-content: space-between;
-  ::after {
-    // position: absolute;
-    // top: 0;
-    // bottom: 0;
-    // with: 6rem;
-    // content: 'adsa';
-    // color: transparent;
-    // backdrop-filter: blur(1rem);
-    // background: rgb(50 44 44 / 40%);
-  }
+  display: flex;
+  padding: 3rem 0;
+  animation: ${marquee} 20s linear infinite;
   li {
-    
+    flex-shrink: 0;
+    margin-right: 5rem;
   }
 `
 const listLinkBrands = [
+  'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
+  'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
+  'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
+  'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
+  'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
+  'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
+  'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
+  'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
+  'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
+  'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
+  'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
+  'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
+  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
   'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
   'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
   'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
@@ -63,13 +80,17 @@ export default function Brand() {
             </svg>
           </WrapperIcon>
         </FlexStyled>
-        <ListStyled>
-          {listLinkBrands.map((item, index) => (
-            <li key={index}>
-              <img src={item} alt="imageBrand" />
-            </li>
-          ))}
-        </ListStyled>
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+          <ListStyled>
+            {listLinkBrands.map((item, index) => (
+              <li key={index}>
+                <ImageComponent alt="imageBrand" styles={{ width: '10rem', height: '2.2rem' }}>
+                  {item}
+                </ImageComponent>
+              </li>
+            ))}
+          </ListStyled>
+        </div>
       </Center>
     </BrandStyled>
   )

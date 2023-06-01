@@ -3,6 +3,7 @@ import Center from './Center'
 import styled from 'styled-components'
 import { TitleComponentH4 } from './Features'
 import { AiFillStar } from 'react-icons/ai'
+import ImageComponent from './Image'
 const TestStyled = styled.div`
   margin-top: 10rem;
   display: flex;
@@ -25,19 +26,6 @@ const ListComments = styled.div`
 const Info = styled.div`
   display: flex;
   position: relative;
-  .icon {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    right: 0;
-  }
-  img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-purple);
-    object-fit: cover;
-  }
 `
 const InfoDetail = styled.div`
   padding-left: 1rem;
@@ -62,6 +50,32 @@ const Btn = styled.div`
   }
 `
 export default function Testimonials() {
+  const listComments = [
+    {
+      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
+      name: 'Maren T.',
+      time: '2 months ago',
+      icon: '/gg.png',
+    },
+    {
+      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
+      name: 'Maren T.',
+      time: '2 months ago',
+      icon: '/twitter.png',
+    },
+    {
+      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
+      name: 'Maren T.',
+      time: '1 months ago',
+      icon: '/gg.png',
+    },
+    {
+      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
+      name: 'Maren T.',
+      time: '3 months ago',
+      icon: '/twitter.png',
+    },
+  ]
   return (
     <Center>
       <TestStyled>
@@ -80,102 +94,48 @@ export default function Testimonials() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </Btn>
-          <li>
-            <Info>
-              <img
-                src="https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512"
-                alt=""
-              />
-              <InfoDetail>
-                <h4>Maren T.</h4>
-                <p>2 months ago</p>
-              </InfoDetail>
-              <img className="icon" src="./gg.png" alt="gg" />
-            </Info>
-            <Starts>
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-            </Starts>
-            <p className="comment">
-              Wonder has made my design process faster and more efficient. Its pre-built components
-              and easy-to-use interface have allowed me to create stunning prototypes in record
-              time.
-            </p>
-          </li>
-          <li>
-            <Info>
-              <img
-                src="https://framerusercontent.com/images/ajvCgLPNOCStQ6c7jmhca08DHw.png"
-                alt=""
-              />
-              <InfoDetail>
-                <h4>Maren T.</h4>
-                <p>2 months ago</p>
-              </InfoDetail>
-              <img className="icon" src="./gg.png" alt="gg" />
-            </Info>
-            <Starts>
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-            </Starts>
-            <p className="comment">
-              As someone who is new to Framer, Wonder has been a lifesaver. Its intuitive layout and
-              helpful documentation have made it easy for me to get started and create
-              professional-looking designs.
-            </p>
-          </li>
-          <li>
-            <Info>
-              <img src="https://framerusercontent.com/images/Vyz5psHR6CbUfzmutE4Vl2o.png" alt="" />
-              <InfoDetail>
-                <h4>Maren T.</h4>
-                <p>2 months ago</p>
-              </InfoDetail>
-              <img className="icon" src="./twitter.png" alt="gg" />
-            </Info>
-            {/* <Starts>
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-            </Starts> */}
-            <p className="comment">
-              I've been using Wonder for a few months now, and I can't imagine going back to
-              designing without it. The template's customization options and flexibility make it
-              perfect for any project.
-            </p>
-          </li>
-          <li>
-            <Info>
-              <img
-                src="https://framerusercontent.com/images/ZqZVXUVUMJSP49qs8ZXd38Rnq2k.png"
-                alt=""
-              />
-              <InfoDetail>
-                <h4>Maren T.</h4>
-                <p>2 months ago</p>
-              </InfoDetail>
-              <img className="icon" src="./twitter.png" alt="gg" />
-            </Info>
-            <Starts>
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-              <AiFillStar className="icon" />
-            </Starts>
-            <p className="comment">
-              The attention to detail in Wonder is incredible. The animations and transitions are
-              seamless and add a level of polish to my designs that I couldn't achieve on my own.
-            </p>
-          </li>
+
+          {listComments.length > 0 &&
+            listComments.map((comment, index) => (
+              <li key={index}>
+                <Info>
+                  <ImageComponent
+                    styles={{
+                      width: '4rem',
+                      height: '4rem',
+                      borderRadius: '50%',
+                      border: '1px solid var(--color-purple)',
+                      objectFit: 'cover',
+                    }}
+                  >
+                    {comment.link}
+                  </ImageComponent>
+                  <InfoDetail>
+                    <h4>{comment.name}</h4>
+                    <p>{comment.time}</p>
+                  </InfoDetail>
+                  <ImageComponent
+                    styles={{ position: 'absolute', width: '2rem', height: '2rem', right: '0' }}
+                    alt="gg"
+                  >
+                    {comment.icon}
+                  </ImageComponent>
+                </Info>
+                <Starts>
+                  <AiFillStar className="icon" />
+                  <AiFillStar className="icon" />
+                  <AiFillStar className="icon" />
+                  <AiFillStar className="icon" />
+                  <AiFillStar className="icon" />
+                </Starts>
+                <p className="comment">
+                  Wonder has made my design process faster and more efficient. Its pre-built
+                  components and easy-to-use interface have allowed me to create stunning prototypes
+                  in record time.
+                </p>
+              </li>
+            ))}
+
           <Btn style={{ right: 0, top: '50%' }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

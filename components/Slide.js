@@ -35,6 +35,7 @@ const ContentStyled = styled.div`
   left: 8rem;
   max-width: 55rem;
 `
+
 export default function Slide() {
   return (
     <SlideStyled>

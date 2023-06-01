@@ -47,28 +47,49 @@ const RateBox = styled.div`
   }
 `
 export default function AboutUs() {
-  const [count, setCount] = useState(0)
-  const targetNumber = 249 // Số mục tiêu bạn muốn đếm đến
-
   const [ref, inView] = useInView({
     triggerOnce: true, // Chỉ kích hoạt một lần khi phần tử vào viewport
     threshold: 0.1, // Kích hoạt khi phần trăm hiển thị của phần tử >= 10%
   })
+  const [count1, setCount1] = useState(1)
+  const [count2, setCount2] = useState(1)
+  const [count3, setCount3] = useState(1)
 
-  const startCounting = () => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1)
-    }, 10)
+  useEffect(() => {
+    if (inView && count1 < 249) {
+      const timer1 = setInterval(() => {
+        setCount1(count1 + 1)
+      }, 5)
 
-    if (count > targetNumber) {
-      clearInterval(interval)
+      return () => {
+        clearInterval(timer1)
+      }
     }
-    console.log(count)
-  }
+  }, [inView, count1])
 
-  if (inView) {
-    // startCounting()
-  }
+  useEffect(() => {
+    if (inView && count2 < 370) {
+      const timer2 = setInterval(() => {
+        setCount2(count2 + 1)
+      }, 5)
+
+      return () => {
+        clearInterval(timer2)
+      }
+    }
+  }, [inView, count2])
+
+  useEffect(() => {
+    if (inView && count3 < 510) {
+      const timer3 = setInterval(() => {
+        setCount3(count3 + 1)
+      }, 5)
+
+      return () => {
+        clearInterval(timer3)
+      }
+    }
+  }, [inView, count3])
 
   return (
     <Center>
@@ -105,15 +126,15 @@ export default function AboutUs() {
         </AboutContainer>
         <Rates ref={ref}>
           <RateBox>
-            <h2>{count} %</h2>
+            <h2>{count1} %</h2>
             <p>Wonder’s growth in 2022 so far</p>
           </RateBox>
           <RateBox>
-            <h2>{0} k</h2>
+            <h2>{count2} k</h2>
             <p>Users around the world</p>
           </RateBox>
           <RateBox>
-            <h2>{0} M</h2>
+            <h2>{count3} M</h2>
             <p>Wonder’s revenue in Q1 2022</p>
           </RateBox>
         </Rates>
