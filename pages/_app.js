@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { Helmet } from 'react-helmet'
 
 const GlobalStyles = createGlobalStyle`
   :root {
