@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import WrapperIcon from './icons/WrapperIcon'
 import Center from './Center'
 import { Flex, FlexStyled } from './Header'
 
 const BrandStyled = styled.div`
-  margin-top: 10rem;
+  margin-top: 16.6rem;
 `
 const Title = styled.h4`
   color: var(--text-color);
-  font-size: 2.5rem;
+  font-size: 2.4rem;
+  font-weight: 600;
 `
 const ListStyled = styled.ul`
-  padding: 2rem 0 3rem;
+  position: relative;
   ${Flex};
+  padding: 4rem 0 3rem;
   justify-content: space-between;
+  ::after {
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // with: 6rem;
+    // content: 'adsa';
+    // color: transparent;
+    // backdrop-filter: blur(1rem);
+    // background: rgb(50 44 44 / 40%);
+  }
+  li {
+    
+  }
 `
 const listLinkBrands = [
   'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
@@ -24,6 +39,7 @@ const listLinkBrands = [
   'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
   'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
 ]
+
 export default function Brand() {
   return (
     <BrandStyled>

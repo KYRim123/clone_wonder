@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
+import { Helmet } from 'react-helmet'
+
 const GlobalStyles = createGlobalStyle`
   :root {
     --bg-body: #FAFAFA;
@@ -16,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     --bg-black: #333;
     --text-p: #737373;
     --bg-advert: rgb(255, 228, 231);
+    --font-Inter: 'Inter', sans-serif;
   }
   * {
     margin: 0;
@@ -28,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 1.6rem;
     background-color: var(--bg-body);
-    font-family: sans-serif;
+    font-family: var(--font-Inter);
   }
   a {
     text-decoration: none;
@@ -41,6 +44,14 @@ const GlobalStyles = createGlobalStyle`
 export default function App({ Component, pageProps: { ...pageProps } }) {
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+          rel="stylesheet"
+        ></link>
+      </Helmet>
       <GlobalStyles />
       <Component {...pageProps} />
     </>

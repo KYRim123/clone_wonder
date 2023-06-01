@@ -11,9 +11,9 @@ const SlideStyled = styled.div`
   border-radius: 5rem;
 `
 const Title = styled.h1`
-  font-size: 8rem;
+  font-size: 6.7rem;
   color: var(--text-white);
-  font-weight: bold;
+  font-weight: 800;
 `
 export const WrapperVideo = styled.div`
   width: 100%;

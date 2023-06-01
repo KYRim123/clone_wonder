@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Center from './Center'
 import styled from 'styled-components'
 import { TitleH1 } from './Features'
 import Link from 'next/link'
 import { TitleComponentH4 } from './Features'
 import { ContentP } from './Features'
+import { useInView } from 'react-intersection-observer'
 
 const AboutUsStyled = styled.div`
   margin-top: 10rem;
@@ -40,11 +41,35 @@ const RateBox = styled.div`
   h2 {
     font-size: 5.6rem;
   }
-  h2, p {
-     color: var(--text-gray);
+  h2,
+  p {
+    color: var(--text-gray);
   }
 `
 export default function AboutUs() {
+  const [count, setCount] = useState(0)
+  const targetNumber = 249 // Số mục tiêu bạn muốn đếm đến
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Chỉ kích hoạt một lần khi phần tử vào viewport
+    threshold: 0.1, // Kích hoạt khi phần trăm hiển thị của phần tử >= 10%
+  })
+
+  const startCounting = () => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => prevCount + 1)
+    }, 10)
+
+    if (count > targetNumber) {
+      clearInterval(interval)
+    }
+    console.log(count)
+  }
+
+  if (inView) {
+    // startCounting()
+  }
+
   return (
     <Center>
       <AboutUsStyled>
@@ -78,17 +103,17 @@ export default function AboutUs() {
             </Link>
           </AboutContent>
         </AboutContainer>
-        <Rates>
+        <Rates ref={ref}>
           <RateBox>
-            <h2>249 %</h2>
+            <h2>{count} %</h2>
             <p>Wonder’s growth in 2022 so far</p>
           </RateBox>
           <RateBox>
-            <h2>370 k</h2>
+            <h2>{0} k</h2>
             <p>Users around the world</p>
           </RateBox>
           <RateBox>
-            <h2>510 M</h2>
+            <h2>{0} M</h2>
             <p>Wonder’s revenue in Q1 2022</p>
           </RateBox>
         </Rates>

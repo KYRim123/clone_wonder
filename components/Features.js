@@ -9,6 +9,7 @@ import BoxIcon from './icons/BoxIcon'
 export const TitleComponentH4 = styled.h4`
   font-style: italic;
   font-size: 2rem;
+  font-weight: 600;
   color: #737373;
 `
 export const TitleH1 = styled.h4`
@@ -39,17 +40,18 @@ const FeaturesBox = styled.div`
 
 const FeaturesContent = styled.div`
   width: 50%;
-  padding-top: 2rem;
 `
 
-const FeaturesStyled = styled.div``
+const FeaturesStyled = styled.div`
+  padding-top: 5rem;
+`
 
 export default function Features() {
   return (
     <Center>
       <FeaturesStyled>
         <TitleComponentH4>features</TitleComponentH4>
-        <FlexStyled style={{gap: '3rem'}}>
+        <FlexStyled style={{gap: '3rem', alignItems: 'start'}}>
           <FeaturesContent>
             <TitleH1>
               Best features <br /> provided by <br /> wonder

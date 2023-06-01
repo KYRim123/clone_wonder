@@ -4,6 +4,9 @@ import styled, { css } from 'styled-components'
 const Icon = css`
   width: 2rem;
   height: 2rem;
+  ${props => props.color === 'purple' && css`
+    color: var(--color-purple);
+  `}
 `
 
 const StyledIcon = styled.div`
