@@ -3,9 +3,6 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Button from './Button'
 import Logo from './Logo'
-
-
-
 export const Flex = css`
   display: flex;
   align-items: center;
