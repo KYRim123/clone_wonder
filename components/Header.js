@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Button from './Button'
 import Logo from './Logo'
+import { ButtonDefault } from './StylesComponent'
+
 export const Flex = css`
   display: flex;
   align-items: center;
@@ -68,9 +69,9 @@ export default function Header() {
           <Link href="#">Blog</Link>
           <Link href="#">About</Link>
         </Nav>
-        <Button bg="blue" color="black">
+        <ButtonDefault bg="blue" color="black">
           Get Wonder now
-        </Button>
+        </ButtonDefault>
       </FlexStyled>
     </HeaderStyled>
   )

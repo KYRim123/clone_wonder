@@ -1,9 +1,9 @@
 import React from 'react'
-import Center from './Center'
-import { TitleH1 } from './Features'
 import { Video, WrapperVideo } from './Slide'
 import styled from 'styled-components'
 import BtnAppleChplay from './BtnAppleChplay'
+import { TitleH1 } from './StylesComponent'
+
 
 export const CommunityBtn = styled.div`
   display: flex;
@@ -22,8 +22,7 @@ const WrapperCA = styled.div`
 `
 export default function Community() {
   return (
-    <Center>
-      <CommunityStyled>
+       <CommunityStyled>
         <TitleH1 style={{ textAlign: 'center' }}>
           Everything you need
           <br />
@@ -38,6 +37,5 @@ export default function Community() {
           <BtnAppleChplay></BtnAppleChplay>
         </WrapperCA>
       </CommunityStyled>
-    </Center>
-  )
+   )
 }

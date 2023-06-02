@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FlexStyled } from './Header'
-import Button from './Button'
 import WrapperIcon from './icons/WrapperIcon'
+import { ButtonDefault } from './StylesComponent'
 
 const SlideStyled = styled.div`
   position: relative;
@@ -52,7 +52,7 @@ export default function Slide() {
           super fast!
         </Title>
         <FlexStyled style={{ padding: '2rem 0' }}>
-          <Button bg="yellow" display="flex" margin="right">
+          <ButtonDefault bg="yellow" display="flex" margin="right">
             Buy Wonder now{' '}
             <WrapperIcon>
               <svg
@@ -70,8 +70,8 @@ export default function Slide() {
                 />
               </svg>
             </WrapperIcon>
-          </Button>
-          <Button bg="white" display="flex">
+          </ButtonDefault>
+          <ButtonDefault bg="white" display="flex">
             <WrapperIcon>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function Slide() {
               </svg>
             </WrapperIcon>
             Watch video
-          </Button>
+          </ButtonDefault>
         </FlexStyled>
       </ContentStyled>
     </SlideStyled>

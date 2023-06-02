@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Button from './Button'
 import ImageComponent from './Image'
 
 const Wrapper = styled.div`
@@ -9,25 +8,12 @@ const Wrapper = styled.div`
 export default function BtnAppleChplay() {
   return (
     <Wrapper>
-      <Button bg="black" color="white">
-        <ImageComponent styles={{ width: '3rem', height: '3rem' }} alt="apple">
-          /apple.png
-        </ImageComponent>
-        <div>
-          Download on the
-          <br />
-          <span>Apple Store</span>
-        </div>
-      </Button>
-      <Button bg="black" color="white">
-        <ImageComponent styles={{ width: '3rem', height: '3rem' }} alt="chplay">
-          /chplay.png
-        </ImageComponent>
-        <div>
-          Get in on <br />
-          <span>Google play</span>
-        </div>
-      </Button>
+      <ImageComponent styles={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="apple">
+        https://framerusercontent.com/images/hYvCH5FIZbUGp7AE5G2BTnd5MMI.png
+      </ImageComponent>
+      <ImageComponent styles={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="chplay">
+        https://framerusercontent.com/images/qezI23ONo3qvMM8qIS1Efjfe0A.png
+      </ImageComponent>
     </Wrapper>
   )
 }

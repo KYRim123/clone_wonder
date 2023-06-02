@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import WrapperIcon from './icons/WrapperIcon'
-import Center from './Center'
 import { FlexStyled } from './Header'
 import ImageComponent from './Image'
+import { BlurStyled } from './StylesComponent'
 
 const BrandStyled = styled.div`
   margin-top: 16.6rem;
@@ -21,6 +21,10 @@ const marquee = keyframes`
       transform: translateX(-100%);
     }
 `
+const WrapperBrand = styled.div`
+  overflow: hidden;
+`
+
 const ListStyled = styled.ul`
   display: flex;
   padding: 3rem 0;
@@ -60,38 +64,38 @@ const listLinkBrands = [
 export default function Brand() {
   return (
     <BrandStyled>
-      <Center>
-        <FlexStyled justify="center">
-          <Title>Trusted by industry leaders</Title>
-          <WrapperIcon color="purple">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
-              />
-            </svg>
-          </WrapperIcon>
-        </FlexStyled>
-        <div style={{ width: '100%', overflow: 'hidden' }}>
+      <FlexStyled justify="center">
+        <Title>Trusted by industry leaders</Title>
+        <WrapperIcon color="purple">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
+            />
+          </svg>
+        </WrapperIcon>
+      </FlexStyled>
+      <BlurStyled>
+        <WrapperBrand>
           <ListStyled>
             {listLinkBrands.map((item, index) => (
               <li key={index}>
-                <ImageComponent alt="imageBrand" styles={{ width: '10rem', height: '2.2rem' }}>
+                <ImageComponent alt="imageBrand" styles={{ width: '10rem', height: '2.5rem' }}>
                   {item}
                 </ImageComponent>
               </li>
             ))}
           </ListStyled>
-        </div>
-      </Center>
+        </WrapperBrand>
+      </BlurStyled>
     </BrandStyled>
   )
 }

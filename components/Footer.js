@@ -49,30 +49,28 @@ const FooterItem3 = styled.div`
 
 export default function Footer() {
   return (
-    <Center>
-      <FooterStyled>
-        <FooterItem1>
-          <Logo></Logo>
-          <div>
-            <h4>Get Wonder now !</h4>
-            <Nav className="nav">
-              <Link href="#">Features</Link>
-              <Link href="#">Pricing</Link>
-              <Link href="#">Blog</Link>
-              <Link href="#">About</Link>
-            </Nav>
-          </div>
-        </FooterItem1>
-        <FooterItem2>
-          <AiOutlineTwitter className="icon" />
-          <ImLinkedin2 className="icon" />
-          <AiFillInstagram className="icon" />
-          <BtnAppleChplay></BtnAppleChplay>
-        </FooterItem2>
-        <FooterItem3>
-          Made for <Link href={'#'}>Framer</Link> by <Link href={'#'}>Tiago Cortezi</Link>
-        </FooterItem3>
-      </FooterStyled>
-    </Center>
+    <FooterStyled>
+      <FooterItem1>
+        <Logo></Logo>
+        <div>
+          <h4>Get Wonder now !</h4>
+          <Nav className="nav">
+            <Link href="#">Features</Link>
+            <Link href="#">Pricing</Link>
+            <Link href="#">Blog</Link>
+            <Link href="#">About</Link>
+          </Nav>
+        </div>
+      </FooterItem1>
+      <FooterItem2>
+        <AiOutlineTwitter className="icon" />
+        <ImLinkedin2 className="icon" />
+        <AiFillInstagram className="icon" />
+        <BtnAppleChplay></BtnAppleChplay>
+      </FooterItem2>
+      <FooterItem3>
+        Made for <Link href={'#'}>Framer</Link> by <Link href={'#'}>Tiago Cortezi</Link>
+      </FooterItem3>
+    </FooterStyled>
   )
 }

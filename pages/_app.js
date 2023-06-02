@@ -39,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
   ul {
     list-style: none;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `
 export default function App({ Component, pageProps: { ...pageProps } }) {
   return (
