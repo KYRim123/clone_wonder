@@ -15,6 +15,12 @@ export const ContentP = styled.p`
   color: var(--text-p);
   padding: 3rem 0;
 `
+
+export const centerItem = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 export const BlurStyled = styled.div`
   position: relative;
   ::after,

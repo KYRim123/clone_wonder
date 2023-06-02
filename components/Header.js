@@ -64,8 +64,8 @@ export default function Header() {
       <FlexStyled align="center" justify="between">
         <Logo>Wonder</Logo>
         <Nav className="nav">
-          <Link href="#">Features</Link>
-          <Link href="#">Pricing</Link>
+          <Link href="#features">Features</Link>
+          <Link href="#pricing">Pricing</Link>
           <Link href="#">Blog</Link>
           <Link href="#">About</Link>
         </Nav>

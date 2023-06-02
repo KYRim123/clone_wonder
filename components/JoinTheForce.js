@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ButtonDefault, TitleH4, TitleH1 } from './StylesComponent'
+import { ButtonDefault, TitleH4, TitleH1, centerItem } from './StylesComponent'
 const JoinStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,10 +14,10 @@ const JoinContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
-  .price {
-    display: flex;
-    padding: 2rem 0;
-  }
+`
+const Price = styled.div`
+  ${centerItem}
+  justify-content: flex-start;
 `
 const Box = styled.div`
   width: 30rem;
@@ -30,7 +30,7 @@ const Box = styled.div`
     height: 3rem;
     color: rgb(149, 117, 199);
   }
-  .name {
+  h2 {
     font-size: 4rem;
     color: var(--color-black);
     font-weight: 60rem;
@@ -59,7 +59,7 @@ const Sale = styled.div`
 `
 export default function JoinTheForce() {
   return (
-    <JoinStyled>
+    <JoinStyled id="pricing">
       <TitleH4>join the force</TitleH4>
       <TitleH1>Find the right plan</TitleH1>
       <JoinContainer>
@@ -80,10 +80,10 @@ export default function JoinTheForce() {
               />
             </svg>
           </div>
-          <h2 className="name">Individual</h2>
-          <div className="price">
+          <h2>Individual</h2>
+          <Price>
             <h4>$ 99.99</h4>/month
-          </div>
+          </Price>
           <Others>
             <div>
               <svg
@@ -164,10 +164,10 @@ export default function JoinTheForce() {
               />
             </svg>
           </div>
-          <div className="name">Team</div>
-          <div className="price">
+          <h2>Team</h2>
+          <Price>
             <h4>$ 99.99 </h4>/month
-          </div>
+          </Price>
           <Others>
             <div>
               <svg
@@ -247,10 +247,10 @@ export default function JoinTheForce() {
               />
             </svg>
           </div>
-          <div className="name">Business</div>
-          <div className="price">
+          <h2>Business</h2>
+          <Price>
             <h4>$ 99.99 </h4>/month
-          </div>
+          </Price>
           <Others>
             <div>
               <svg

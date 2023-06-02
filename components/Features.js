@@ -31,7 +31,7 @@ const FeaturesStyled = styled.div`
 
 export default function Features() {
   return (
-    <FeaturesStyled>
+    <FeaturesStyled id="features">
       <TitleH4>features</TitleH4>
       <FlexStyled style={{ gap: '3rem', alignItems: 'start' }}>
         <FeaturesContent>

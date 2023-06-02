@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import WrapperIcon from './icons/WrapperIcon'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { FlexStyled } from './Header'
 
 const MouseStyled = styled.div`
-  // padding-top: 3rem;
-`
-const Animation = styled.div`
   padding-top: 1rem;
-  animation: slide 2s linear infinite;
-  @keyframes slide {
+`
+const upDown = keyframes`
     0% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(1rem);
     }
-    100% {
-      margin-left: 0;
-    }
-  }
+
+`
+const Animation = styled.div`
+  padding-top: 1rem;
+  animation: ${upDown} 2s linear infinite;
 `
 
 export default function ScrollMouse() {

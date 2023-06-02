@@ -1,36 +1,40 @@
-import React from 'react'
-import styled from 'styled-components'
+import { useState } from 'react'
 
-const Container = styled.div`
-  width: 200px; /* Điều chỉnh độ rộng theo ý muốn */
-  overflow: hidden;
-`
+function YourComponent() {
+  const products = ['dâdas', 'dâdas', 'dâdas', 'dâdas', 'dâdas', 'dâdas', 'dâdas']
 
-const Marquee = styled.div`
-  display: flex;
-  animation: marquee 10s linear infinite;
-  span {
-    flex-shrink: 0;
-    margin-right: 20px; /* Khoảng cách giữa các văn bản */
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+  const [currentPage, setCurrentPage] = useState(0)
+  const productsPerPage = 4 // Số sản phẩm hiển thị trên mỗi trang
+
+  const totalPages = Math.ceil(products.length / productsPerPage)
+  const startIndex = currentPage * productsPerPage
+  const endIndex = startIndex + productsPerPage
+  const currentProducts = products.slice(startIndex, endIndex)
+
+  const goToNextPage = () => {
+    setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
   }
-`
 
-export default function Animation() {
+  const goToPreviousPage = () => {
+    setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages)
+  }
+
   return (
-    <Container>
-      <Marquee>
-        <span>This is the </span>
-        <span>This is </span>
-        <span>This is </span>
-      </Marquee>
-    </Container>
+    <div>
+      <div className="product-list">
+        {currentProducts.map((product) => (
+          <div key={product?.id}>{product}</div>
+        ))}
+      </div>
+      <div className="pagination">
+        <button onClick={goToPreviousPage}>Previous</button>
+        <span>
+          {currentPage + 1} / {totalPages}
+        </span>
+        <button onClick={goToNextPage}>Next</button>
+      </div>
+    </div>
   )
 }
+
+export default YourComponent

@@ -13,6 +13,7 @@ import JoinTheForce from '../components/JoinTheForce'
 import GetStarted from '../components/GetStarted'
 import Answer from '../components/Answer'
 import Footer from '../components/Footer'
+import YourComponent from '../components/Animation'
 
 export default function HomePage() {
   return (

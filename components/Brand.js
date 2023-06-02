@@ -13,6 +13,10 @@ const Title = styled.h4`
   font-size: 2.4rem;
   font-weight: 600;
 `
+
+const WrapperBrand = styled.div`
+  overflow: hidden;
+`
 const marquee = keyframes`
     0% {
       transform: translateX(0%);
@@ -21,10 +25,6 @@ const marquee = keyframes`
       transform: translateX(-100%);
     }
 `
-const WrapperBrand = styled.div`
-  overflow: hidden;
-`
-
 const ListStyled = styled.ul`
   display: flex;
   padding: 3rem 0;
@@ -44,9 +44,6 @@ const listLinkBrands = [
   'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
   'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
   'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
-  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
-  'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
-  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
   'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
   'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
   'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
@@ -56,9 +53,6 @@ const listLinkBrands = [
   'https://framerusercontent.com/images/ULyeyAm77MIZzELSo7xrXBvS2AM.png',
   'https://framerusercontent.com/images/3QVSu8bjflnBPm2KFFWsx5RIF4.png',
   'https://framerusercontent.com/images/3OxXjFphdj6jrlDghY6iDxAs.png',
-  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
-  'https://framerusercontent.com/images/qVrjYbxuXTI7PEtviP9KSNXw1Pc.png',
-  'https://framerusercontent.com/images/ofvYosyBCyvMTNcaugQmXVRkkLk.png',
 ]
 
 export default function Brand() {
