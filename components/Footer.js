@@ -9,7 +9,7 @@ import { ImLinkedin2 } from 'react-icons/im'
 import { Nav } from './Header'
 import { TitleComponentH4 } from './Features'
 
-const FooterStyled = styled.div`
+const FooterStyled = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 3rem;

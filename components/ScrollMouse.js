@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import WrapperIcon from './icons/WrapperIcon'
 import styled, { keyframes } from 'styled-components'
-import { FlexStyled } from './Header'
+import { FlexStyled } from './StylesComponent'
 
-const MouseStyled = styled.div`
-  padding-top: 1rem;
+const WrapperMouse = styled.div`
+  padding-top: 4.2rem;
 `
 const upDown = keyframes`
     0% {
@@ -32,7 +32,7 @@ export default function ScrollMouse() {
 
   return (
     showMouse && (
-      <MouseStyled>
+      <WrapperMouse>
         <FlexStyled justify="center">
           <Animation>
             <WrapperIcon>
@@ -54,7 +54,7 @@ export default function ScrollMouse() {
             </WrapperIcon>
           </Animation>
         </FlexStyled>
-      </MouseStyled>
+      </WrapperMouse>
     )
   )
 }

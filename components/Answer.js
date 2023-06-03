@@ -3,10 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { TitleH4, TitleH1 } from './StylesComponent'
 import WrapperIcon from './icons/WrapperIcon'
-const AnswerStyled = styled.div`
+
+const Container = styled.div`
   padding-top: 5rem;
 `
-const AnswerTitle = styled.div`
+const Title = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -27,11 +28,11 @@ const AnswerLink = styled(Link)`
 `
 export default function Answer() {
   return (
-    <AnswerStyled>
-      <AnswerTitle>
+    <Container>
+      <Title>
         <TitleH4>answers for the</TitleH4>
-        <TitleH1>Frequently asked questions</TitleH1>
-      </AnswerTitle>
+        <TitleH1 style={{fontWeight:  '600'}}>Frequently asked questions</TitleH1>
+      </Title>
       <AnswerLink href={'#'}>
         <h3>What is Wonder and what does it do?</h3>
         <WrapperIcon>
@@ -92,6 +93,6 @@ export default function Answer() {
           </svg>
         </WrapperIcon>
       </AnswerLink>
-    </AnswerStyled>
+    </Container>
   )
 }

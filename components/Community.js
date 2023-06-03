@@ -1,11 +1,14 @@
 import React from 'react'
-import { Video, WrapperVideo } from './Slide'
 import styled from 'styled-components'
 import BtnAppleChplay from './BtnAppleChplay'
 import { TitleH1 } from './StylesComponent'
 
+const Wrapper = styled.div``
+const Container = styled.div`
+  margin-top: 3rem;
+`
 
-export const CommunityBtn = styled.div`
+export const Btn = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
@@ -13,29 +16,24 @@ export const CommunityBtn = styled.div`
   margin-top: 2rem;
 `
 
-const CommunityStyled = styled.div`
-  margin-top: 3rem;
-`
 const WrapperCA = styled.div`
   margin-top: 3rem;
   text-align: center;
 `
 export default function Community() {
   return (
-       <CommunityStyled>
+    <Wrapper>
+      <Container>
         <TitleH1 style={{ textAlign: 'center' }}>
           Everything you need
           <br />
           to start now
         </TitleH1>
-        <WrapperVideo>
-          <Video autoPlay loop muted>
-            <source src="/videoCommunity.mp4" type="video/mp4" />
-          </Video>
-        </WrapperVideo>
+        {/* content */}
         <WrapperCA>
           <BtnAppleChplay></BtnAppleChplay>
         </WrapperCA>
-      </CommunityStyled>
-   )
+      </Container>
+    </Wrapper>
+  )
 }

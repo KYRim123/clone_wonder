@@ -1,12 +1,11 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import WrapperIcon from './icons/WrapperIcon'
-import { FlexStyled } from './Header'
 import ImageComponent from './Image'
-import { BlurStyled } from './StylesComponent'
+import { BlurStyled, FlexStyled } from './StylesComponent'
 
-const BrandStyled = styled.div`
-  margin-top: 16.6rem;
+const WrapperBrand = styled.div`
+  padding: 15.7rem 0 7.4rem;
 `
 const Title = styled.h4`
   color: var(--text-color);
@@ -14,7 +13,7 @@ const Title = styled.h4`
   font-weight: 600;
 `
 
-const WrapperBrand = styled.div`
+const ContainerListBrand = styled.div`
   overflow: hidden;
 `
 const marquee = keyframes`
@@ -57,7 +56,7 @@ const listLinkBrands = [
 
 export default function Brand() {
   return (
-    <BrandStyled>
+    <WrapperBrand>
       <FlexStyled justify="center">
         <Title>Trusted by industry leaders</Title>
         <WrapperIcon color="purple">
@@ -78,7 +77,7 @@ export default function Brand() {
         </WrapperIcon>
       </FlexStyled>
       <BlurStyled>
-        <WrapperBrand>
+        <ContainerListBrand>
           <ListStyled>
             {listLinkBrands.map((item, index) => (
               <li key={index}>
@@ -88,8 +87,8 @@ export default function Brand() {
               </li>
             ))}
           </ListStyled>
-        </WrapperBrand>
+        </ContainerListBrand>
       </BlurStyled>
-    </BrandStyled>
+    </WrapperBrand>
   )
 }

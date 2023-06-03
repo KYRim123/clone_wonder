@@ -1,7 +1,7 @@
 import React from 'react'
 import Center from '../components/Center'
 import Header from '../components/Header'
-import Slide from '../components/Slide'
+import Slider from '../components/Slider'
 import ScrollMouse from '../components/ScrollMouse'
 import Brand from '../components/Brand'
 import Features from '../components/Features'
@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <Center>
       <Header />
-      <Slide />
+      <Slider />
       <ScrollMouse />
       <Brand />
       <Features />

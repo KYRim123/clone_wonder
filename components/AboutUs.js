@@ -4,15 +4,15 @@ import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
 import { ContentP, TitleH1, TitleH4 } from './StylesComponent'
 
-const AboutUsStyled = styled.div`
-  margin-top: 10rem;
+const Wrapper = styled.div`
+  padding-top: 16.8rem;
 `
-const AboutContainer = styled.div`
+const Container = styled.div`
   display: flex;
   gap: 5rem;
   margin-top: 2rem;
 `
-const AboutContent = styled.div`
+const Content = styled.div`
   width: 53.6rem;
   .icon {
     width: 1.5rem;
@@ -89,13 +89,13 @@ export default function AboutUs() {
   }, [inView, count3])
 
   return (
-    <AboutUsStyled>
+    <Wrapper>
       <TitleH4>about us</TitleH4>
-      <AboutContainer>
-        <AboutContent>
+      <Container>
+        <Content>
           <TitleH1>Enrich your design workflow with wonder</TitleH1>
-        </AboutContent>
-        <AboutContent>
+        </Content>
+        <Content>
           <ContentP>
             This is an all-in-one Framer template which can help you to create a website in an
             instant! The days of spending time manually building the same components are gone. This
@@ -118,8 +118,8 @@ export default function AboutUs() {
               />
             </svg>
           </Link>
-        </AboutContent>
-      </AboutContainer>
+        </Content>
+      </Container>
       <Rates ref={ref}>
         <RateBox>
           <h2>{count1} %</h2>
@@ -134,6 +134,6 @@ export default function AboutUs() {
           <p>Wonder’s revenue in Q1 2022</p>
         </RateBox>
       </Rates>
-    </AboutUsStyled>
+    </Wrapper>
   )
 }

@@ -198,3 +198,43 @@ export const BoxIcon = styled.div`
       `}
   }
 `
+// flex
+export const Flex = css`
+  display: flex;
+  align-items: center;
+  //align
+  ${(props) =>
+    props.align === 'center' &&
+    css`
+      align-items: center;
+    `}
+  ${(props) =>
+    props.align === 'start' &&
+    css`
+      align-items: flex-start;
+    `}
+    ${(props) =>
+    props.align === 'end' &&
+    css`
+      align-items: flex-end;
+    `}
+  //justify
+  ${(props) =>
+    props.justify === 'between' &&
+    css`
+      justify-content: space-between;
+    `}
+  ${(props) =>
+    props.justify === 'center' &&
+    css`
+      justify-content: center;
+    `}
+    ${(props) =>
+    props.justify === 'around' &&
+    css`
+      justify-content: space-around;
+    `}
+`
+export const FlexStyled = styled.div`
+  ${Flex}
+`

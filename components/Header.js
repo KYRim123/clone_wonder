@@ -1,48 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Logo from './Logo'
-import { ButtonDefault } from './StylesComponent'
-
-export const Flex = css`
-  display: flex;
-  align-items: center;
-  //align
-  ${(props) =>
-    props.align === 'center' &&
-    css`
-      align-items: center;
-    `}
-  ${(props) =>
-    props.align === 'start' &&
-    css`
-      align-items: flex-start;
-    `}
-    ${(props) =>
-    props.align === 'end' &&
-    css`
-      align-items: flex-end;
-    `}
-  //justify
-  ${(props) =>
-    props.justify === 'between' &&
-    css`
-      justify-content: space-between;
-    `}
-  ${(props) =>
-    props.justify === 'center' &&
-    css`
-      justify-content: center;
-    `}
-    ${(props) =>
-    props.justify === 'around' &&
-    css`
-      justify-content: space-around;
-    `}
-`
-export const FlexStyled = styled.div`
-  ${Flex}
-`
+import { ButtonDefault, FlexStyled } from './StylesComponent'
 
 export const Nav = styled.nav`
   a {
@@ -54,13 +14,11 @@ export const Nav = styled.nav`
     color: var(--text-hover);
   }
 `
-const HeaderStyled = styled.header`
-  padding: 4.4rem 0;
-`
+const WrapperHeader = styled.header``
 
 export default function Header() {
   return (
-    <HeaderStyled>
+    <WrapperHeader>
       <FlexStyled align="center" justify="between">
         <Logo>Wonder</Logo>
         <Nav className="nav">
@@ -73,6 +31,6 @@ export default function Header() {
           Get Wonder now
         </ButtonDefault>
       </FlexStyled>
-    </HeaderStyled>
+    </WrapperHeader>
   )
 }

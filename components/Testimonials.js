@@ -4,7 +4,9 @@ import { AiFillStar } from 'react-icons/ai'
 import ImageComponent from './Image'
 import { TitleH1, TitleH4, centerItem } from './StylesComponent'
 
-const TestStyled = styled.div`
+const Wrapper = styled.div``
+
+const Container = styled.div`
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@ const WrapperListComment = styled.div`
   width: 100%;
   padding: 4rem 2rem;
 `
-const ListComments = styled.div`
+const Comments = styled.div`
   display: flex;
   gap: 2rem;
   transition: transform 0.8s linear;
@@ -87,7 +89,7 @@ const Btn = styled.div`
 `
 export default function Testimonials() {
   const [crListComment, setCrListComment] = useState(0)
-  const listComments = [
+  const comments = [
     {
       link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
       name: 'Maren T.',
@@ -138,63 +140,65 @@ export default function Testimonials() {
     },
   ]
   return (
-    <TestStyled>
-      <TitleH4>testimonials</TitleH4>
-      <TitleH1>What people say</TitleH1>
-      <WrapperListComment>
-        {crListComment !== 0 && (
-          <Btn type="prev" onClick={() => setCrListComment(crListComment - 1)}>
-            <span></span>
-          </Btn>
-        )}
-        {crListComment === 0 && (
-          <Btn type="next" onClick={() => setCrListComment(crListComment + 1)}>
-            <span></span>
-          </Btn>
-        )}
-        <ListComments style={{ transform: `translateX(${crListComment * -100}%)` }}>
-          {listComments.length > 0 &&
-            listComments.map((comment, index) => (
-              <li key={index}>
-                <Info>
-                  <ImageComponent
-                    styles={{
-                      width: '4rem',
-                      height: '4rem',
-                      borderRadius: '50%',
-                      border: '1px solid var(--color-purple)',
-                      objectFit: 'cover',
-                    }}
-                  >
-                    {comment.link}
-                  </ImageComponent>
-                  <InfoDetail>
-                    <h4>{comment.name}</h4>
-                    <p>{comment.time}</p>
-                  </InfoDetail>
-                  <ImageComponent
-                    styles={{ position: 'absolute', width: '2rem', height: '2rem', right: '0' }}
-                    alt="gg"
-                  >
-                    {comment.icon}
-                  </ImageComponent>
-                </Info>
-                <Starts>
-                  <AiFillStar className="icon" />
-                  <AiFillStar className="icon" />
-                  <AiFillStar className="icon" />
-                  <AiFillStar className="icon" />
-                  <AiFillStar className="icon" />
-                </Starts>
-                <p className="comment">
-                  Wonder has made my design process faster and more efficient. Its pre-built
-                  components and easy-to-use interface have allowed me to create stunning prototypes
-                  in record time.
-                </p>
-              </li>
-            ))}
-        </ListComments>
-      </WrapperListComment>
-    </TestStyled>
+    <Wrapper>
+      <Container>
+        <TitleH4>testimonials</TitleH4>
+        <TitleH1>What people say</TitleH1>
+        <WrapperListComment>
+          {crListComment !== 0 && (
+            <Btn type="prev" onClick={() => setCrListComment(crListComment - 1)}>
+              <span></span>
+            </Btn>
+          )}
+          {crListComment === 0 && (
+            <Btn type="next" onClick={() => setCrListComment(crListComment + 1)}>
+              <span></span>
+            </Btn>
+          )}
+          <Comments style={{ transform: `translateX(${crListComment * -100}%)` }}>
+            {comments.length > 0 &&
+              comments.map((comment, index) => (
+                <li key={index}>
+                  <Info>
+                    <ImageComponent
+                      styles={{
+                        width: '4rem',
+                        height: '4rem',
+                        borderRadius: '50%',
+                        border: '1px solid var(--color-purple)',
+                        objectFit: 'cover',
+                      }}
+                    >
+                      {comment.link}
+                    </ImageComponent>
+                    <InfoDetail>
+                      <h4>{comment.name}</h4>
+                      <p>{comment.time}</p>
+                    </InfoDetail>
+                    <ImageComponent
+                      styles={{ position: 'absolute', width: '2rem', height: '2rem', right: '0' }}
+                      alt="gg"
+                    >
+                      {comment.icon}
+                    </ImageComponent>
+                  </Info>
+                  <Starts>
+                    <AiFillStar className="icon" />
+                    <AiFillStar className="icon" />
+                    <AiFillStar className="icon" />
+                    <AiFillStar className="icon" />
+                    <AiFillStar className="icon" />
+                  </Starts>
+                  <p className="comment">
+                    Wonder has made my design process faster and more efficient. Its pre-built
+                    components and easy-to-use interface have allowed me to create stunning
+                    prototypes in record time.
+                  </p>
+                </li>
+              ))}
+          </Comments>
+        </WrapperListComment>
+      </Container>
+    </Wrapper>
   )
 }

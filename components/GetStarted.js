@@ -4,6 +4,7 @@ import { ContentP, TitleH1, centerItem } from './StylesComponent'
 import Link from 'next/link'
 import { ButtonDefault } from './StylesComponent'
 import WrapperIcon from './icons/WrapperIcon'
+
 const absolute = css`
   position: absolute;
   top: 0;
@@ -11,10 +12,10 @@ const absolute = css`
   bottom: 0;
   right: 0;
 `
-const WrapperGetStarted = styled.div`
-  padding-top: 10rem;
+const Wrapper = styled.div`
+  padding-top: 20rem;
 `
-const GetStartedContainer = styled.div`
+const Container = styled.div`
   position: relative;
   ${centerItem};
   width: 100%;
@@ -22,12 +23,12 @@ const GetStartedContainer = styled.div`
   border-radius: 64px;
   overflow: hidden;
 `
-const WrapperContent = styled.div`
+const Content = styled.div`
   text-align: center;
   max-width: 45rem;
   z-index: 2;
 `
-const WrapperVideo = styled.div`
+const Video = styled.div`
   ${absolute}
   z-index: -1;
   video {
@@ -64,9 +65,9 @@ export default function GetStarted() {
   }, [])
 
   return (
-    <WrapperGetStarted>
-      <GetStartedContainer>
-        <WrapperContent>
+    <Wrapper>
+      <Container>
+        <Content>
           <div>
             <TitleH1>Get started with Wonder</TitleH1>
           </div>
@@ -78,7 +79,7 @@ export default function GetStarted() {
           </div>
           <div>
             <Link href={'#'}>
-              <ButtonDefault bg="black" color="white" margin='right'>
+              <ButtonDefault bg="black" color="white" margin="right">
                 Buy template{' '}
                 <WrapperIcon>
                   <svg
@@ -100,16 +101,17 @@ export default function GetStarted() {
             </Link>
             <Link href={'#'}>Learn more</Link>
           </div>
-        </WrapperContent>
-        <WrapperVideo>
-          <video
-            ref={videoRef}
-            loop
-            src="https://framerusercontent.com/modules/assets/TevMfkVifAs0VtWrrx6uLFhUA~fbX-JkLyBFAvoWNqAdkLtjwk0MA7B_q86U9y_45tBzQ.mp4"
-          ></video>
-        </WrapperVideo>
+        </Content>
+        <Video>
+          <video ref={videoRef} loop>
+            <source
+              type="video/mp4"
+              src="https://framerusercontent.com/modules/assets/TevMfkVifAs0VtWrrx6uLFhUA~fbX-JkLyBFAvoWNqAdkLtjwk0MA7B_q86U9y_45tBzQ.mp4"
+            />
+          </video>
+        </Video>
         <Bg></Bg>
-      </GetStartedContainer>
-    </WrapperGetStarted>
+      </Container>
+    </Wrapper>
   )
 }
