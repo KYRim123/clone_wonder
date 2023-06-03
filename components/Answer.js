@@ -3,7 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { TitleH4, TitleH1 } from './StylesComponent'
 import WrapperIcon from './icons/WrapperIcon'
-const AnswerStyled = styled.div``
+const AnswerStyled = styled.div`
+  padding-top: 5rem;
+`
 const AnswerTitle = styled.div`
   display: flex;
   align-items: center;

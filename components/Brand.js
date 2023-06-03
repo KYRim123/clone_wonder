@@ -27,11 +27,11 @@ const marquee = keyframes`
 `
 const ListStyled = styled.ul`
   display: flex;
+  gap: 10rem;
   padding: 3rem 0;
   animation: ${marquee} 20s linear infinite;
   li {
     flex-shrink: 0;
-    margin-right: 5rem;
   }
 `
 const listLinkBrands = [

@@ -1,59 +1,115 @@
-import React from 'react'
-import styled from 'styled-components'
-import { ContentP, TitleH1 } from './StylesComponent'
+import React, { useEffect, useRef } from 'react'
+import styled, { css, keyframes } from 'styled-components'
+import { ContentP, TitleH1, centerItem } from './StylesComponent'
 import Link from 'next/link'
 import { ButtonDefault } from './StylesComponent'
-const Bg = styled.div`
-  background-color: #6ce4d8e6;
-  height: 55rem;
-  border-radius: 6rem;
-  margin-top: 5rem;
+import WrapperIcon from './icons/WrapperIcon'
+const absolute = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 `
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+const WrapperGetStarted = styled.div`
   padding-top: 10rem;
+`
+const GetStartedContainer = styled.div`
+  position: relative;
+  ${centerItem};
+  width: 100%;
+  height: 55.6rem;
+  border-radius: 64px;
+  overflow: hidden;
+`
+const WrapperContent = styled.div`
   text-align: center;
+  max-width: 45rem;
+  z-index: 2;
+`
+const WrapperVideo = styled.div`
+  ${absolute}
+  z-index: -1;
+  video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background-color: rgb(181, 219, 219);
+    object-position: 50% 50%;
+  }
+`
+const Bg = styled.div`
+  ${absolute}
+  background-color: #6ce4d8e6;
+  mix-blend-mode: screen;
 `
 
 export default function GetStarted() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const videoElement = videoRef.current
+
+    const handleFirstClick = () => {
+      videoElement.play()
+      document.removeEventListener('click', handleFirstClick)
+    }
+
+    document.addEventListener('click', handleFirstClick)
+
+    return () => {
+      document.removeEventListener('click', handleFirstClick)
+    }
+  }, [])
+
   return (
-    <Bg>
-      <Container>
-        <TitleH1>
-          Get started with <br /> Wonder
-        </TitleH1>
-        <ContentP>
-          Wonder is an all-in-one template with many <br /> components ready to use right out of the
-          box.
-        </ContentP>
-        <div style={{ paddingBottom: '3rem' }}>
-          <Link href={'#'} className="button buyTemplate">
-            <ButtonDefault color="white" bg="black" margin="right">
-              Buy template
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 icon"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </ButtonDefault>
-          </Link>
-          <Link href={'#'} className="button learnMore">
-            Learn more
-          </Link>
-        </div>
-      </Container>
-    </Bg>
+    <WrapperGetStarted>
+      <GetStartedContainer>
+        <WrapperContent>
+          <div>
+            <TitleH1>Get started with Wonder</TitleH1>
+          </div>
+          <div>
+            <ContentP>
+              Wonder is an all-in-one template with many components ready to use right out of the
+              box.
+            </ContentP>
+          </div>
+          <div>
+            <Link href={'#'}>
+              <ButtonDefault bg="black" color="white" margin='right'>
+                Buy template{' '}
+                <WrapperIcon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                    />
+                  </svg>
+                </WrapperIcon>
+              </ButtonDefault>
+            </Link>
+            <Link href={'#'}>Learn more</Link>
+          </div>
+        </WrapperContent>
+        <WrapperVideo>
+          <video
+            ref={videoRef}
+            loop
+            src="https://framerusercontent.com/modules/assets/TevMfkVifAs0VtWrrx6uLFhUA~fbX-JkLyBFAvoWNqAdkLtjwk0MA7B_q86U9y_45tBzQ.mp4"
+          ></video>
+        </WrapperVideo>
+        <Bg></Bg>
+      </GetStartedContainer>
+    </WrapperGetStarted>
   )
 }
