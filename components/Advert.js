@@ -32,7 +32,10 @@ export default function Advert() {
       <Bg>
         <FlexStyled style={{ padding: '0 3rem' }} align="center">
           <WrapperImage>
-            <ImageComponent styles={{ width: '50rem', height: '50rem' }} alt={'imgAdv'}>
+            <ImageComponent
+              styles={{ width: '80rem', height: '50rem', objectFit: 'cover' }}
+              alt={'imgAdv'}
+            >
               {'https://framerusercontent.com/images/SGFrYFCQP0MZFlQVnD0cTEQZE.png'}
             </ImageComponent>
           </WrapperImage>
