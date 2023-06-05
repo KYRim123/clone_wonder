@@ -16,7 +16,7 @@ const Title = styled.h4`
 const ContainerListBrand = styled.div`
   overflow: hidden;
 `
-const marquee = keyframes`
+export const marquee = keyframes`
     0% {
       transform: translateX(0%);
     }

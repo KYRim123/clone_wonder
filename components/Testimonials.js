@@ -89,6 +89,7 @@ const Btn = styled.div`
 `
 export default function Testimonials() {
   const [crListComment, setCrListComment] = useState(0)
+
   const comments = [
     {
       link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
@@ -139,6 +140,7 @@ export default function Testimonials() {
       icon: '/twitter.png',
     },
   ]
+
   return (
     <Wrapper>
       <Container>

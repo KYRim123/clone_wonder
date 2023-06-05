@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const TitleH4 = styled.h4`
   font-style: italic;
@@ -237,4 +237,12 @@ export const Flex = css`
 `
 export const FlexStyled = styled.div`
   ${Flex}
+`
+export const marqueeRight = keyframes`
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
 `
