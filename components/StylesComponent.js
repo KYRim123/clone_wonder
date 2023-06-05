@@ -137,6 +137,8 @@ export const BoxIcon = styled.div`
     props.bg === 'purple' &&
     css`
       background-color: rgb(237, 166, 237, 1);
+      grid-column: 1;
+      grid-row: 1;
       .icon {
         color: #b638ab;
       }
@@ -146,6 +148,8 @@ export const BoxIcon = styled.div`
     props.bg === 'red' &&
     css`
       background-color: rgb(255, 228, 231);
+      grid-column: 1;
+      grid-row: 1;
       .icon {
         color: #df7682;
       }
@@ -155,6 +159,8 @@ export const BoxIcon = styled.div`
     props.bg === 'blue' &&
     css`
       background-color: rgb(152, 236, 228);
+      grid-column: 1;
+      grid-row: 1;
       .icon {
         color: #219287;
       }
@@ -164,6 +170,8 @@ export const BoxIcon = styled.div`
     props.bg === 'yellow' &&
     css`
       background-color: rgb(250, 255, 184);
+      grid-column: 1;
+      grid-row: 1;
       .icon {
         color: #b0b750;
       }

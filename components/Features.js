@@ -120,6 +120,11 @@ export default function Features() {
       ),
     },
   ]
+  const handleItem = (index) => {
+    setCurrentBox(index)
+    const a = [1,2,3,4]
+    
+  }
   return (
     <WrapperFeatures id="features">
       <TitleH4>features</TitleH4>
@@ -130,7 +135,7 @@ export default function Features() {
             <ContentP>{featuresItems[currentBox].content}</ContentP>
             <div>
               <Link href={'#'}>
-                <ButtonDefault bg="black" color="white">
+                <ButtonDefault bg="black" color="white" margin="right">
                   Buy template
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,9 +153,7 @@ export default function Features() {
                   </svg>
                 </ButtonDefault>
               </Link>
-              <Link href={'#'}>
-                <ButtonDefault>Learn more</ButtonDefault>
-              </Link>
+              <Link href={'#'}>Learn more</Link>
             </div>
           </FeaturesContent>
           <FeaturesBox>
@@ -159,7 +162,7 @@ export default function Features() {
                 key={index}
                 bg={item.color}
                 active={currentBox}
-                onClick={() => setCurrentBox(index)}
+                onClick={() => handleItem(index)}
               >
                 {item.svg}
               </BoxIcon>
