@@ -14,9 +14,11 @@ export const TitleH1 = styled.h4`
 export const ContentP = styled.p`
   color: var(--text-p);
   padding: 3rem 0;
-  ${props => props.paddingBT && css`
-    padding: 0 0 2rem;
-  `}
+  ${(props) =>
+    props.paddingBT &&
+    css`
+      padding: 0 0 2rem;
+    `}
 `
 
 export const centerItem = css`
@@ -131,7 +133,7 @@ export const BoxIcon = styled.div`
     height: 10rem;
   }
   ${(props) =>
-    props.active &&
+    props.active === 0 &&
     props.bg === 'purple' &&
     css`
       background-color: rgb(237, 166, 237, 1);
@@ -140,7 +142,7 @@ export const BoxIcon = styled.div`
       }
     `}
   ${(props) =>
-    props.active &&
+    props.active === 1 &&
     props.bg === 'red' &&
     css`
       background-color: rgb(255, 228, 231);
@@ -149,7 +151,7 @@ export const BoxIcon = styled.div`
       }
     `}
     ${(props) =>
-    props.active &&
+    props.active === 2 &&
     props.bg === 'blue' &&
     css`
       background-color: rgb(152, 236, 228);
@@ -158,7 +160,7 @@ export const BoxIcon = styled.div`
       }
     `}
     ${(props) =>
-    props.active &&
+    props.active === 3 &&
     props.bg === 'yellow' &&
     css`
       background-color: rgb(250, 255, 184);
