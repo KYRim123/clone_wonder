@@ -96,48 +96,56 @@ export default function Testimonials() {
       name: 'Maren T.',
       time: '2 months ago',
       icon: '/gg.png',
+      cmt: 'Wonder has made my design process faster and more efficient. Its pre-built components and easy-to-use interface have allowed me to create stunning prototypes in record time.',
+    },
+    {
+      link: 'https://framerusercontent.com/images/ajvCgLPNOCStQ6c7jmhca08DHw.png',
+      name: 'Howard K.',
+      time: '2 months ago',
+      icon: '/twitter.png',
+      cmt: 'As someone who is new to Framer, Wonder has been a lifesaver. Its intuitive layout and helpful documentation have made it easy for me to get started and create professional-looking designs.',
+    },
+    {
+      link: 'https://framerusercontent.com/images/ZqZVXUVUMJSP49qs8ZXd38Rnq2k.png',
+      name: 'Maren T.',
+      time: '1 months ago',
+      icon: '/gg.png',
+      cmt: 'I`ve been using Wonder for a few months now, and I can`t imagine going back to designing without it. The template`s customization options and flexibility make it perfect for any project.',
     },
     {
       link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren T.',
-      time: '2 months ago',
+      name: 'Vanessa P.',
+      time: '3 months ago',
       icon: '/twitter.png',
+      cmt: `The attention to detail in Wonder is incredible. The animations and transitions are seamless and add a level of polish to my designs that I couldn't achieve on my own.`,
+    },
+    {
+      link: `https://framerusercontent.com/images/ajvCgLPNOCStQ6c7jmhca08DHw.png`,
+      name: 'Caitlyn A.',
+      time: '2 months ago',
+      icon: '/gg.png',
+      cmt: 'Wonder has helped me streamline my workflow and collaborate more effectively with my team. Its shared component library has made it easy for us to stay on the same page and maintain consistency across our designs.',
     },
     {
       link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
       name: 'Maren T.',
       time: '1 months ago',
       icon: '/gg.png',
+      cmt: 'I`ve been using Wonder for a few months now, and I can`t imagine going back to designing without it. The template`s customization options and flexibility make it perfect for any project.',
     },
     {
       link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren T.',
+      name: 'Vanessa P.',
       time: '3 months ago',
       icon: '/twitter.png',
+      cmt: `The attention to detail in Wonder is incredible. The animations and transitions are seamless and add a level of polish to my designs that I couldn't achieve on my own.`,
     },
     {
-      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren T.',
+      link: `https://framerusercontent.com/images/WBaFvZEjYe0eF8VONcgh4ceG5QI.png`,
+      name: 'Caitlyn A.',
       time: '2 months ago',
       icon: '/gg.png',
-    },
-    {
-      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren T.',
-      time: '2 months ago',
-      icon: '/twitter.png',
-    },
-    {
-      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren T.',
-      time: '1 months ago',
-      icon: '/gg.png',
-    },
-    {
-      link: 'https://framerusercontent.com/images/K7mwPf64c1OQU2Uw9LnfRkDvxGg.png?scale-down-to=512',
-      name: 'Maren C.',
-      time: '3 months ago',
-      icon: '/twitter.png',
+      cmt: 'Wonder has helped me streamline my workflow and collaborate more effectively with my team. Its shared component library has made it easy for us to stay on the same page and maintain consistency across our designs.',
     },
   ]
 
@@ -191,11 +199,7 @@ export default function Testimonials() {
                     <AiFillStar className="icon" />
                     <AiFillStar className="icon" />
                   </Starts>
-                  <p className="comment">
-                    Wonder has made my design process faster and more efficient. Its pre-built
-                    components and easy-to-use interface have allowed me to create stunning
-                    prototypes in record time.
-                  </p>
+                  <p className="comment">{comment.cmt}</p>
                 </li>
               ))}
           </Comments>
