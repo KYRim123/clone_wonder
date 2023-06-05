@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { ButtonDefault, ContentP, TitleH1, TitleH4, BoxIcon, FlexStyled } from './StylesComponent'
+import { wrapGrid } from 'animate-css-grid'
 
 const WrapperFeatures = styled.div`
   padding: 7.4rem 0 14.8rem;
@@ -30,6 +31,7 @@ const FeaturesBox = styled.div`
 
 export default function Features() {
   const [currentBox, setCurrentBox] = useState(0)
+  const refGridBox = useRef()
   const featuresItems = [
     {
       name: 'Best features provided by wonder',
@@ -122,9 +124,12 @@ export default function Features() {
   ]
   const handleItem = (index) => {
     setCurrentBox(index)
-    const a = [1,2,3,4]
-    
   }
+
+  useEffect(() => {
+    wrapGrid(refGridBox.current)
+  }, [])
+
   return (
     <WrapperFeatures id="features">
       <TitleH4>features</TitleH4>
@@ -156,7 +161,7 @@ export default function Features() {
               <Link href={'#'}>Learn more</Link>
             </div>
           </FeaturesContent>
-          <FeaturesBox>
+          <FeaturesBox ref={refGridBox}>
             {featuresItems.map((item, index) => (
               <BoxIcon
                 key={index}

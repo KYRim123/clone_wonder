@@ -125,9 +125,7 @@ export const BoxIcon = styled.div`
   border-radius: 32px;
   opacity: 1;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${centerItem}
   .icon {
     width: 10rem;
     height: 10rem;

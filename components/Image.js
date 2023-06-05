@@ -7,7 +7,7 @@ export default function ImageComponent({ alt, children, styles }) {
       width={500}
       height={500}
       src={children}
-      alt={alt ? 'img':alt}
+      alt={alt ? alt:'img'}
       style={{...styles}}
     />
   )
