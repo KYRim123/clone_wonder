@@ -14,6 +14,9 @@ export const TitleH1 = styled.h4`
 export const ContentP = styled.p`
   color: var(--text-p);
   padding: 3rem 0;
+  ${props => props.paddingBT && css`
+    padding: 0 0 2rem;
+  `}
 `
 
 export const centerItem = css`

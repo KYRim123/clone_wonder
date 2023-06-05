@@ -96,7 +96,7 @@ export default function AboutUs() {
           <TitleH1>Enrich your design workflow with wonder</TitleH1>
         </Content>
         <Content>
-          <ContentP>
+          <ContentP paddingBT>
             This is an all-in-one Framer template which can help you to create a website in an
             instant! The days of spending time manually building the same components are gone. This
             is definitely a great opportunity to get started right away!
