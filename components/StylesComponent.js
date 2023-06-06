@@ -5,14 +5,31 @@ export const TitleH4 = styled.h4`
   font-size: 2rem;
   font-weight: 600;
   color: #737373;
+  padding-bottom: 2rem;
 `
 export const TitleH1 = styled.h4`
-  font-size: 5.6rem;
-  color: var(--text-black);
+  font-style: var(--title-font-style, normal);
+  font-weight: var(--title-font-weight, 400);
+  color: var(--title-text-color, #000);
+  font-size: var(--title-font-size, 16px);
+  letter-spacing: var(--title-letter-spacing, 0);
+  text-transform: var(--text-transform, none);
+  text-decoration: var(--text-decoration, none);
+  line-height: var(--title-line-height, 1.2em);
+  text-align: var(--title-text-alignment, start);
 `
 
 export const ContentP = styled.p`
-  color: var(--text-p);
+  font-family: var(--content-font-family, Inter, Inter Placeholder, sans-serif);
+  font-style: var(--content-font-style, normal);
+  font-weight: var(--content-font-weight, 400);
+  color: var(--content-text-color, #000);
+  font-size: var(--content-font-size, 16px);
+  letter-spacing: var(--content-letter-spacing, 0);
+  text-transform: var(--text-transform, none);
+  text-decoration: var(--text-decoration, none);
+  line-height: var(--content-line-height, 1.2em);
+  text-align: var(--content-text-alignment, start);
   padding: 3rem 0;
   ${(props) =>
     props.paddingBT &&
@@ -213,6 +230,8 @@ export const BoxIcon = styled.div`
 export const Flex = css`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   //align
   ${(props) =>
     props.align === 'center' &&
@@ -256,4 +275,48 @@ export const marqueeRight = keyframes`
     100% {
       transform: translateX(0);
     }
+`
+export const absolute = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+`
+export const Nav = styled.nav`
+  margin: 0 auto;
+  a {
+    padding-right: 4rem;
+    color: var(--text-color);
+    font-size: 1.7rem;
+  }
+  a:hover {
+    color: var(--text-hover);
+  }
+  ${(props) =>
+    props.responsive === 'tablet' &&
+    css`
+      @media (max-width: 1023px) {
+        ${centerItem}
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        a {
+          padding-right: 0;
+        }
+      }
+    `}
+  ${(props) =>
+    props.responsive === 'mobile' &&
+    css`
+      @media (max-width: 739px) {
+        ${centerItem}
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        a {
+          padding-right: 0;
+        }
+      }
+    `}
 `

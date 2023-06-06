@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import LayoutDefault from '../components/LayoutDefault'
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -18,7 +19,29 @@ const GlobalStyles = createGlobalStyle`
     --text-p: #737373;
     --bg-advert: rgb(255, 228, 231);
     --font-Inter: 'Inter', sans-serif;
-  }
+    /* font-style */
+    --font-style: normal;
+    --text-decoration: none;
+    --text-transform: none;
+    /* font title */
+    --title-font-size: 5.6rem;
+    --title-font-weight: 700;
+    --title-letter-spacing: -.5px;
+    --title-line-height: 105%;
+    --title-paragraph-spacing: 40px;
+    --title-text-alignment: left;
+    --title-text-color: #333333;
+    
+    /* content */
+    --content-font-size: 1.6rem;
+    --content-font-weight: 500;
+    --content-letter-spacing: 0px;
+    --content-line-height: 1.7em;
+    --content-paragraph-spacing: 2rem;
+    --content-text-alignment: left;
+    --content-text-color: #555555;
+}
+
   * {
     margin: 0;
     padding: 0;
@@ -40,16 +63,43 @@ const GlobalStyles = createGlobalStyle`
   ul {
     list-style: none;
   }
-  img {
-    max-width: 100%;
-    height: auto;
+  /* tablet */
+   @media (min-width: 740px) and (max-width: 1023px) {
+    :root {
+     --title-font-size: 4.5rem;
+    --title-font-style: normal;
+    --title-font-weight: 700;
+    --title-letter-spacing: -.5px;
+    --title-line-height: 105%;
+    --title-paragraph-spacing: 4rem;
+    --title-text-alignment: left;
+    --title-text-color: #333333;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+   }
+  /* mobile */
+  @media (max-width: 739px) {
+   :root {
+    --title-font-size: 3.6rem;
+    --title-font-style: normal;
+    --title-font-weight: 700;
+    --title-letter-spacing: -.5px;
+    --title-line-height: 105%;
+    --title-paragraph-spacing: 4rem;
+    --title-text-alignment: left;
+    --title-text-color: #333333;
+   } 
   }
 `
 export default function App({ Component, pageProps: { ...pageProps } }) {
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <LayoutDefault>
+        <Component {...pageProps} />
+      </LayoutDefault>
     </>
   )
 }

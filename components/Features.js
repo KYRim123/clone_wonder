@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Link from 'next/link'
-import { ButtonDefault, ContentP, TitleH1, TitleH4, BoxIcon, FlexStyled } from './StylesComponent'
+import { ButtonDefault, ContentP, TitleH1, TitleH4, centerItem } from './StylesComponent'
 import { wrapGrid } from 'animate-css-grid'
 
 const WrapperFeatures = styled.div`
@@ -9,24 +9,138 @@ const WrapperFeatures = styled.div`
 `
 const ContainerFeatures = styled.div`
   padding-top: 1rem;
+  display: flex;
+  gap: 3rem;
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
 `
 const FeaturesContent = styled.div`
-  width: 50%;
+  @media (max-width: 1023px) {
+    width: 100%
+  }
 `
 const FeaturesBox = styled.div`
   display: grid;
+  position: relative;
   flex: 1 0 0px;
   gap: 16px;
-  grid-auto-rows: 250px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 25rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   height: 516px;
   justify-content: center;
   max-width: 604px;
-  min-width: 400px;
-  overflow: hidden;
-  padding: 0;
+  width: min-content;
+  padding: 0 3rem;
+  @media (max-width: 1023px) {
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    border-radius: 999px;
+    opacity: 1;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+`
+const BoxIcon = styled.div`
   position: relative;
-  width: 1px;
+  background-color: rgb(243, 243, 243);
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+  opacity: 1;
+  cursor: pointer;
+  ${centerItem}
+  .icon {
+    width: 10rem;
+    height: 10rem;
+  }
+  ${(props) =>
+    props.active === 0 &&
+    props.bg === 'purple' &&
+    css`
+      background-color: rgb(237, 166, 237, 1);
+      grid-column: 1;
+      grid-row: 1;
+      .icon {
+        color: #b638ab;
+      }
+    `}
+  ${(props) =>
+    props.active === 1 &&
+    props.bg === 'red' &&
+    css`
+      background-color: rgb(255, 228, 231);
+      grid-column: 1;
+      grid-row: 1;
+      .icon {
+        color: #df7682;
+      }
+    `}
+    ${(props) =>
+    props.active === 2 &&
+    props.bg === 'blue' &&
+    css`
+      background-color: rgb(152, 236, 228);
+      grid-column: 1;
+      grid-row: 1;
+      .icon {
+        color: #219287;
+      }
+    `}
+    ${(props) =>
+    props.active === 3 &&
+    props.bg === 'yellow' &&
+    css`
+      background-color: rgb(250, 255, 184);
+      grid-column: 1;
+      grid-row: 1;
+      .icon {
+        color: #b0b750;
+      }
+    `}
+  :hover {
+    ${(props) =>
+      props.bg === 'purple' &&
+      css`
+        background-color: rgb(237, 166, 237, 1);
+        .icon {
+          color: #b638ab;
+        }
+      `}
+    ${(props) =>
+      props.bg === 'red' &&
+      css`
+        background-color: rgb(255, 228, 231);
+        .icon {
+          color: #df7682;
+        }
+      `}
+      ${(props) =>
+      props.bg === 'blue' &&
+      css`
+        background-color: rgb(152, 236, 228);
+        .icon {
+          color: #219287;
+        }
+      `}
+      ${(props) =>
+      props.bg === 'yellow' &&
+      css`
+        background-color: rgb(250, 255, 184);
+        .icon {
+          color: #b0b750;
+        }
+      `}
+  }
+  @media (max-width: 1023px) {
+    height: 64px;
+    position: relative;
+    width: 64px;
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 `
 
 export default function Features() {
@@ -132,48 +246,46 @@ export default function Features() {
 
   return (
     <WrapperFeatures id="features">
-      <TitleH4>features</TitleH4>
       <ContainerFeatures>
-        <FlexStyled style={{ gap: '3rem', alignItems: 'start' }}>
-          <FeaturesContent>
-            <TitleH1>{featuresItems[currentBox].name}</TitleH1>
-            <ContentP>{featuresItems[currentBox].content}</ContentP>
-            <div>
-              <Link href={'#'}>
-                <ButtonDefault bg="black" color="white" margin="right">
-                  Buy template
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 icon"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </ButtonDefault>
-              </Link>
-              <Link href={'#'}>Learn more</Link>
-            </div>
-          </FeaturesContent>
-          <FeaturesBox ref={refGridBox}>
-            {featuresItems.map((item, index) => (
-              <BoxIcon
-                key={index}
-                bg={item.color}
-                active={currentBox}
-                onClick={() => handleItem(index)}
-              >
-                {item.svg}
-              </BoxIcon>
-            ))}
-          </FeaturesBox>
-        </FlexStyled>
+        <FeaturesContent>
+          <TitleH4>features</TitleH4>
+          <TitleH1>{featuresItems[currentBox].name}</TitleH1>
+          <ContentP>{featuresItems[currentBox].content}</ContentP>
+          <div>
+            <Link href={'#'}>
+              <ButtonDefault bg="black" color="white" margin="right">
+                Buy template
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 icon"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </ButtonDefault>
+            </Link>
+            <Link href={'#'}>Learn more</Link>
+          </div>
+        </FeaturesContent>
+        <FeaturesBox ref={refGridBox}>
+          {featuresItems.map((item, index) => (
+            <BoxIcon
+              key={index}
+              bg={item.color}
+              active={currentBox}
+              onClick={() => handleItem(index)}
+            >
+              {item.svg}
+            </BoxIcon>
+          ))}
+        </FeaturesBox>
       </ContainerFeatures>
     </WrapperFeatures>
   )

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import ImageComponent from './Image'
-import { ButtonDefault, FlexStyled } from './StylesComponent'
+import { ButtonDefault, TitleH1, centerItem } from './StylesComponent'
 
 const Wrapper = styled.div`
   padding-top: 5rem;
@@ -10,38 +10,67 @@ const Wrapper = styled.div`
 const Bg = styled.div`
   background-color: var(--bg-advert);
   border-radius: 5rem;
-  height: 54rem;
 `
-const Container = styled.div`
-  h2 {
-    font-size: 5.5rem;
+const AdvertContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.2rem 4.2rem 0;
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
   }
 `
-const Button = styled.div`
+const Content = styled.div`
+  width: 50%;
+  @media (max-width: 1023px) {
+    width: 100%;
+    ${centerItem}
+    flex-direction: column;
+  }
+`
+
+const WrapperButtons = styled.div`
   padding-top: 5rem;
   a:first-child {
     margin-right: 1rem;
   }
+  @media (max-width: 1023px) {
+    width: 100%;
+    ${centerItem}
+    flex-direction: column;
+  }
 `
 const WrapperImage = styled.div`
-  margin-top: 4rem;
+  display: contents;
+  border-radius: inherit;
+  pointer-events: none;
 `
 export default function Advert() {
   return (
     <Wrapper>
       <Bg>
-        <FlexStyled style={{ padding: '0 3rem' }} align="center">
+        <AdvertContainer>
           <WrapperImage>
             <ImageComponent
-              styles={{ width: '80rem', height: '50rem', objectFit: 'cover' }}
+              styles={{
+                pointerEvents: 'none',
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                borderRadius: 'inherit',
+                objectPosition: 'center',
+                objectFit: 'cover',
+                imageRendering: 'auto',
+              }}
               alt={'imgAdv'}
             >
               {'https://framerusercontent.com/images/SGFrYFCQP0MZFlQVnD0cTEQZE.png'}
             </ImageComponent>
           </WrapperImage>
-          <Container>
-            <h2>All components are ready to use</h2>
-            <Button>
+
+          <Content>
+            <TitleH1>All components are ready to use</TitleH1>
+            <WrapperButtons>
               <Link href={'#'}>
                 <ButtonDefault bg="black" color="white">
                   Buy template
@@ -62,9 +91,9 @@ export default function Advert() {
                 </ButtonDefault>
               </Link>
               <Link href={'#'}>Learn more</Link>
-            </Button>
-          </Container>
-        </FlexStyled>
+            </WrapperButtons>
+          </Content>
+        </AdvertContainer>
       </Bg>
     </Wrapper>
   )

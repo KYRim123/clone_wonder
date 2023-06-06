@@ -6,23 +6,39 @@ import Logo from './Logo'
 import BtnAppleChplay from './BtnAppleChplay'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { ImLinkedin2 } from 'react-icons/im'
-import { Nav } from './Header'
-import { TitleComponentH4 } from './Features'
+ import { Nav, centerItem } from './StylesComponent'
 
 const FooterStyled = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 3rem;
   margin-top: 20rem;
+  @media (max-width: 739px) {
+    align-items: center;
+  }
+`
+const WrapperNavFooter = styled.div`
+  display: flex;
+  gap: 3rem;
+  @media (max-width: 739px) {
+    flex-direction: column;
+  }
 `
 
 const FooterItem1 = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  div {
-    display: flex;
-    gap: 3rem;
+  @media (max-width: 739px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+`
+const WrapperIcon = styled.div`
+  ${centerItem}
+  gap: 2rem;
+  @media (max-width: 739px) {
+    flex-direction: column;
   }
 `
 const FooterItem2 = styled.div`
@@ -34,16 +50,21 @@ const FooterItem2 = styled.div`
   .icon {
     font-size: 3rem;
     cursor: pointer;
+    color: var(--color-gray);
     :hover {
-      color: var(--color-gray);
+      color: var(--color-black);
     }
   }
 `
 const FooterItem3 = styled.div`
   border-top: 0.5px solid #eae4e4;
   padding: 1rem 0;
+  width: 100%;
   a {
     color: var(--color-purple);
+  }
+  @media (max-width: 739px) {
+    text-align: center;
   }
 `
 
@@ -52,21 +73,23 @@ export default function Footer() {
     <FooterStyled>
       <FooterItem1>
         <Logo></Logo>
-        <div>
+        <WrapperNavFooter>
           <h4>Get Wonder now !</h4>
-          <Nav className="nav">
+          <Nav responsive='mobile'>
             <Link href="#">Features</Link>
             <Link href="#">Pricing</Link>
             <Link href="#">Blog</Link>
             <Link href="#">About</Link>
           </Nav>
-        </div>
+        </WrapperNavFooter>
       </FooterItem1>
       <FooterItem2>
-        <AiOutlineTwitter className="icon" />
-        <ImLinkedin2 className="icon" />
-        <AiFillInstagram className="icon" />
-        <BtnAppleChplay></BtnAppleChplay>
+        <WrapperIcon>
+          <AiOutlineTwitter className="icon" />
+          <ImLinkedin2 className="icon" />
+          <AiFillInstagram className="icon" />
+          <BtnAppleChplay></BtnAppleChplay>
+        </WrapperIcon>
       </FooterItem2>
       <FooterItem3>
         Made for <Link href={'#'}>Framer</Link> by <Link href={'#'}>Tiago Cortezi</Link>

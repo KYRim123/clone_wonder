@@ -10,21 +10,18 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   gap: 5rem;
-  margin-top: 2rem;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
 `
 const Content = styled.div`
   width: 53.6rem;
   .icon {
     width: 1.5rem;
   }
-`
-const Rates = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 2rem;
-  width: 100rem;
-  margin: 8rem auto;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
 `
 const RateBox = styled.div`
   display: flex;
@@ -41,6 +38,20 @@ const RateBox = styled.div`
   h2,
   p {
     color: var(--text-gray);
+  }
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+`
+const Rates = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 8rem auto;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    align-items: center;
   }
 `
 export default function AboutUs() {

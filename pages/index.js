@@ -13,12 +13,12 @@ import JoinTheForce from '../components/JoinTheForce'
 import GetStarted from '../components/GetStarted'
 import Answer from '../components/Answer'
 import Footer from '../components/Footer'
+import Slide from '../components/Slider'
 
 export default function HomePage() {
   return (
-    <Center>
-      <Header />
-      <Slider />
+    <>
+      <Slide />
       <ScrollMouse />
       <Brand />
       <Features />
@@ -29,7 +29,6 @@ export default function HomePage() {
       <JoinTheForce />
       <GetStarted />
       <Answer />
-      <Footer />
-    </Center>
+    </>
   )
 }

@@ -14,6 +14,11 @@ const JoinContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
+  @media (max-width: 1023px) {
+    width: 100%;
+    ${centerItem}
+    flex-direction: column;
+  }
 `
 const Price = styled.div`
   ${centerItem}

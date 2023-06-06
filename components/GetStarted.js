@@ -1,17 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import styled, { css, keyframes } from 'styled-components'
-import { ContentP, TitleH1, centerItem } from './StylesComponent'
+import { ContentP, TitleH1, absolute, centerItem } from './StylesComponent'
 import Link from 'next/link'
 import { ButtonDefault } from './StylesComponent'
 import WrapperIcon from './icons/WrapperIcon'
 
-const absolute = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`
 const Wrapper = styled.div`
   padding-top: 20rem;
 `
@@ -27,6 +20,7 @@ const Content = styled.div`
   text-align: center;
   max-width: 45rem;
   z-index: 2;
+  padding: 3rem;
 `
 const Video = styled.div`
   ${absolute}

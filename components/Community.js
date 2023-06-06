@@ -46,8 +46,16 @@ const Marquee = styled.ul`
     css`
       animation: ${marqueeRight} 35s linear infinite;
     `}
+   
   li {
     flex-shrink: 0;
+  }
+  @media (max-width: 739px) {
+    ${(props) =>
+      props.disNone &&
+      css`
+        display: none;
+      `}
   }
 `
 const WrapperImagePhone = styled.div`
@@ -58,6 +66,9 @@ const WrapperImagePhone = styled.div`
   bottom: 0;
   left: 0;
   ${centerItem};
+  @media (max-width: 1023px) {
+    padding: 1rem;
+  }
 `
 
 export default function Community() {
@@ -98,7 +109,7 @@ export default function Community() {
                 https://framerusercontent.com/images/YXp6johBY0uYZ4KK4nC6d0R7Tyo.png?scale-down-to=1024
               </ImageComponent>
             </WrapperImagePhone>
-            <Marquee direction="left">
+            <Marquee disNone direction="left">
               {listImage.map((item, index) => (
                 <li key={index}>
                   <ImageComponent

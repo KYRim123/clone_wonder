@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { FlexStyled } from './StylesComponent'
+import { FlexStyled, absolute } from './StylesComponent'
 import WrapperIcon from './icons/WrapperIcon'
 import { ButtonDefault } from './StylesComponent'
 
@@ -17,19 +17,23 @@ const Title = styled.h1`
   font-size: 6.7rem;
   color: var(--text-white);
   font-weight: 800;
+  @media (max-width: 1023px) {
+    font-size: 5.6rem;
+  }
+  @media (max-width: 739px) {
+    font-size: 4rem;
+  }
 `
 const WrapperVideo = styled.div`
-  width: 100%;
-  padding-bottom: 56.25%;
-  position: relative;
-  overflow: hidden;
+  ${absolute}
+  z-index: -1;
   video {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+    background-color: rgb(181, 219, 219);
+    object-position: 50% 50%;
   }
 `
 const ContentStyled = styled.div`
@@ -37,6 +41,9 @@ const ContentStyled = styled.div`
   top: 5rem;
   left: 8rem;
   max-width: 55rem;
+  @media (max-width: 749px) {
+    left: 3rem;
+  }
 `
 
 export default function Slide() {
